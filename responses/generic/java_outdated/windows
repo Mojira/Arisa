@@ -1,0 +1,8 @@
+*Your Java version is out of date!*
+* On Windows, you can use the [Minecraft Installer|https://launcher.mojang.com/download/MinecraftInstaller.msi] which includes the latest version of Java.
+* Otherwise, please manually update your Java to the latest version: http://www.java.com/en/download/.
+* It is recommended you uninstall any outdated versions prior to upgrading.
+* When using a _32-bit browser_ on a _64-bit operating system_ the automatic version detection will only show the _32-bit version_ of Java, the _64-bit version_ needs to be *downloaded manually*: http://www.java.com/en/download/manual.jsp.
+
+Please report if the issue persists with the *latest* Java version.
+For technical support please use the [Mojang Support Center|http://help.mojang.com/customer/portal/articles/364794-where-can-i-find-more-help-and-technical-support-].

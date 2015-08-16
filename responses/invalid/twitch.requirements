@@ -1,0 +1,5 @@
+*Your system does not meet the [minimum requirements|https://help.mojang.com/customer/portal/articles/1374789-twitch-integration-in-minecraft] to run TwitchTV:*
+Minimum Requirements for streaming: Windows: 7 (32 or 64bit) or newer and Mac: 10.8 (64bit only) or newer.
+Windows XP is not supported by Twitch and _it is recommended you upgrade your operating system as Microsoft will be dropping support for XP on April 08, 2014._
+Linux streaming is currently unsupported as the appropriate Java libraries have not been released by Twitch at this time.
+OpenGL 1.5 is also currently required for Twitch streaming. If you have not please [update graphics card drivers here|https://help.mojang.com/customer/portal/articles/928493-error-bad-video-card-driver] or obtain a newer video card with the minimum requirements, OpenGL 2.1 recommended to support future versions of MC.

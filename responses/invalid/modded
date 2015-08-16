@@ -1,0 +1,5 @@
+This ticket is _invalid_ as it relates to a modified or third-party client, server, or launcher.
+* Any non-standard client/server/launcher build needs to be taken up with the appropriate team, not Mojang.
+* Any plugin issues need to be addressed to the creator of the plugin or resource pack.
+* This site is for addressing issues related to the *base unmodded Minecraft*; any modded system _invalidates_ your ticket, unless the behavior can be reproduced without mods.
+* Additionally, if you have problems on large-scale modded servers, please report it to their site. It's probably not a bug in Minecraft.

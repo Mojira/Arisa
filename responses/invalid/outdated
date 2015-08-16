@@ -1,0 +1,3 @@
+_Your version of Minecraft is no longer supported_. We are currently only accepting bugs found in the latest official release and the snapshot most recently released thereafter.
+To change your game to a different version, start the launcher. Select *Edit Profile*. In the "Use Version" dropdown menu, select the game version you want. Then click *Save Profile*.
+If you're able to reproduce this issue in the _latest version_ of Minecraft, please open a new issue and attach a crash report from a supported version.
