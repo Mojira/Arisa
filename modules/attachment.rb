@@ -3,7 +3,7 @@ module Arisa
   # (as specified in the configuration file) from issues.
   class AttachmentModule
     def initialize(_, dispatcher)
-      dispatcher.issue_modules << self
+      dispatcher.updtd_modules << self
     end
 
     def fields

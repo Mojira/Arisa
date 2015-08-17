@@ -28,6 +28,7 @@ module Arisa
     end
 
     def process(_, issue, reports)
+      return if issue.resolution
       resolve issue if outdated?(issue, reports)
     end
   end

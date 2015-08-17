@@ -76,6 +76,7 @@ module Arisa
     end
 
     def process(client, issue, reports)
+      return if issue.resolution
       reports.each do |report|
         parent = parent(report)
         next unless parent

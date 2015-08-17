@@ -1,20 +1,12 @@
 module Arisa
   # Calls the modules and controls the main program flow
   class Dispatcher
-    attr_reader :core
-    attr_reader :fields
-    attr_reader :modules
-    attr_reader :issue_pool
-    attr_reader :crash_modules
-    attr_reader :issue_modules
-    attr_reader :query_modules
+    attr_reader :core, :fields, :modules, :issue_pool
+    attr_reader :crash_modules, :issue_modules, :updtd_modules, :query_modules
 
     def initialize(core)
+      initialize_arrays
       @core = core
-      @modules = []
-      @crash_modules = []
-      @issue_modules = []
-      @query_modules = []
       @task_delay = 0
       @issue_pool = IssuePool.new(self)
       @fields = IssuePool.fields | IssueParser.fields
@@ -22,17 +14,24 @@ module Arisa
       register_fields
     end
 
+    def initialize_arrays
+      @modules = []
+      @crash_modules = []
+      @issue_modules = []
+      @updtd_modules = []
+      @query_modules = []
+    end
+
     def register_module(new_class)
       new_module = new_class.new(core, self)
       modules << new_module
-      rescue => e
-        handle e
+      rescue => e; handle e
     end
 
     def register_fields
-      issue_modules.each do |issue_module|
-        next unless issue_module.respond_to?(:fields)
-        fields.push(*issue_module.fields)
+      (issue_modules | updtd_modules).each do |subject|
+        next unless subject.respond_to? :fields
+        fields.push(*subject.fields)
       end
     end
 
@@ -45,21 +44,25 @@ module Arisa
       client = core.client
       query_modules.each { |target| target.query(client) }
       process_issues(client)
-      rescue => e
-        handle e
+      rescue => e; handle e
     end
 
     def process_issues(client)
       issue_pool.query
-      issue_pool.retrieve.each do |issue|
-        process_issue(client, issue)
+      issue_pool.eat(:created).each do |issue|
+        process_created(client, issue)
         process_crash_reports(client, issue)
       end
+      issue_pool.eat(:updated).each { |issue| process_updated(client, issue) }
     end
 
-    def process_issue(client, issue)
-      puts "#{issue.key}: Processing issue"
+    def process_created(client, issue)
+      puts "#{issue.key}: Processing new issue"
       issue_modules.each { |target| target.process(client, issue) }
+    end
+
+    def process_updated(client, issue)
+      updtd_modules.each { |target| target.process(client, issue) }
     end
 
     def process_crash_reports(client, issue)

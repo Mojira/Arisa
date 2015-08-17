@@ -9,6 +9,7 @@ ENABLED_MODULES = [
   Arisa::CHKModule,
   Arisa::DuplicatesModule,
   Arisa::FixVersionModule,
+  Arisa::IncompleteModule,
   Arisa::JavaVersionModule,
   Arisa::ModsModule,
   Arisa::VersionModule

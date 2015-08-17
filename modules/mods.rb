@@ -24,6 +24,7 @@ module Arisa
     end
 
     def process(_, issue, reports)
+      return if issue.resolution
       resolve issue if modded? reports
     end
   end

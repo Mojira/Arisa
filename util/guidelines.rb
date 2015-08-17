@@ -3,7 +3,7 @@ module Arisa
   # the guidelines for reporting issues
   class Guidelines
     def self.template?(field, content)
-      get_template(field).squish == content.squish
+      Template.new(field).body.squish == content.squish
     end
 
     def self.field_valid?(fields, field, min = 1)
@@ -23,14 +23,14 @@ module Arisa
     end
 
     def self.any_field_valid?(fields)
-      return true if field_valid(fields, 'description', 30)
-      return true if field_valid(fields, 'environment', 200)
+      return true if field_valid?(fields, 'description', 30)
+      return true if field_valid?(fields, 'environment', 200)
       false
     end
 
     def self.any_length_valid?(fields)
-      return true if length_valid(fields['summary'], 60)
-      return true if length_valid(fields['attachments'])
+      return true if length_valid?(fields['summary'], 60)
+      return true if length_valid?(fields['attachments'])
       false
     end
 
