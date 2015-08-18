@@ -20,7 +20,7 @@ module Arisa
       )
     end
 
-    def transition_data
+    def transition_data(issue)
       launcher_crash = match_launcher_crash(issue.fields['environment'])
       type = launcher_crash ? 'crash_report' : 'generic'
       response = Response.new('incomplete', type)
@@ -34,7 +34,7 @@ module Arisa
       return if issue.resolution
       return if Guidelines.complete?(issue)
       puts "#{issue.key}: Resolving incomplete issue"
-      issue.transition 'Resolve Issue', transition_data
+      issue.transition 'Resolve Issue', transition_data(issue)
     end
   end
 end
