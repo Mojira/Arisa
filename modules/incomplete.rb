@@ -10,7 +10,7 @@ module Arisa
       [:attachment, :description, :environment, :resolution, :summary]
     end
 
-    def self.match_launcher_crash(environment)
+    def match_launcher_crash(environment)
       return false unless environment
       environment =~ Regexp.new(
         'OS: .* (.*)[[:space:]]+' \
