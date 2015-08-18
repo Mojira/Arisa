@@ -19,7 +19,7 @@ module Arisa
 
     def outdated?
       return false if JRE_OUTDATED_IGNORE_VENDORS.include? vendor
-      Gem::Version.new(release) < Gem::Version.new(latest.release)
+      Gem::Version.new(release) < Gem::Version.new(self.class.latest.release)
     end
 
     def <=>(other)
