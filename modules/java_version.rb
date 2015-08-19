@@ -22,7 +22,8 @@ module Arisa
       Response.new('invalid', 'java_outdated', type)
     end
 
-    def comment_on(issue)
+    def comment_on(issue, reports)
+      report = reports.first
       os = report.data.traverse(:system, :operating_system)
       body = response(os).body
       comment = Comment.new(issue, body)
@@ -32,7 +33,7 @@ module Arisa
     end
 
     def process(_, issue, reports)
-      comment_on issue if outdated? reports
+      comment_on(issue, reports) if outdated? reports
     end
   end
 end
