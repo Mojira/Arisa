@@ -30,7 +30,7 @@ module Arisa
 
     def self.any_length_valid?(fields)
       return true if length_valid?(fields['summary'], 60)
-      return true if length_valid?(fields['attachments'])
+      return true if length_valid?(fields['attachment'])
       false
     end
 
