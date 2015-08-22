@@ -19,7 +19,7 @@ module Arisa
              when /mac os/i  then 'osx'     # I'm sorry.
              else                 'generic' # Huh?
       end
-      Response.new('invalid', 'java_outdated', type)
+      Response.new('generic', 'java_outdated', type)
     end
 
     def comment_on(issue, reports)
