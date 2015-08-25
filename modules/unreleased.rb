@@ -12,7 +12,7 @@ module Arisa
 
     def unreleased_ids(issue)
       unreleased = @core.versions.unreleased.map(&:id)
-      issue.versions.select { |version| unreleased.include? version.id }
+      issue.versions.map(&:id).select { |id| unreleased.include? id }
     end
 
     def issue_data(issue)
@@ -43,7 +43,7 @@ module Arisa
       data = issue_data(issue)
       return unless data
       puts "#{issue.key}: Removing unreleased versions"
-      issue.save(issue_data(issue))
+      issue.save(data)
     end
   end
 end

@@ -15,13 +15,15 @@ module Arisa
       return if @cached && ttl && @cached + ttl > Time.now
       @versions.clear
       client.Project.all.each do |project|
-        refresh_project project
+        # Due to broken or unsupported versions field expansion on the server
+        # side it is not possible to use the returned project directly.
+        refresh_project client.Project.find(project.id, expand: :versions)
       end
       @cached = Time.now
     end
 
     def refresh_project(project)
-      @versions[project.id] = project.versions.map { |v| Version.new(v) }
+      @versions[project.id] = project.versions
     end
 
     def all

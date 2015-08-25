@@ -10,7 +10,7 @@ module Arisa
       versions = reports.map(&:version).compact
       !versions.empty? && versions.all? do |version_name|
         version = @core.versions.detect(version_name, issue.project)
-        version && version.original.archived
+        version && version.archived
       end
     end
 
