@@ -4,13 +4,13 @@ module Arisa
     attr_reader :type
     attr_reader :path
 
-    def base
-      File.expand_path(File.join(File.dirname(__FILE__), '..', '..', @type))
-    end
-
     def initialize(type, *path)
       @type = type
       @path = File.expand_path(File.join(base, *path))
+    end
+
+    def base
+      File.expand_path(File.join(File.dirname(__FILE__), '..', '..', @type))
     end
 
     def body(*)
