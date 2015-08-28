@@ -9,10 +9,9 @@ module JIRA
     class Version
       include Comparable
 
-      attr_reader :version_name
-
       def create_name
         @version_name = Arisa::VersionName.new(self) unless @version_name
+        @version_name
       end
 
       def released?
@@ -21,14 +20,16 @@ module JIRA
       end
 
       def type
-        create_name
         return :release if version_name.release
         return :snapshot if version_name.snapshot
       end
+      
+      def version_name
+        create_name
+        @version_name
+      end
 
       def <=>(other)
-        create_name
-        other.create_name
         s_date = attrs['releaseDate']
         o_date = other.attrs['releaseDate']
         return version_name <=> other.version_name unless s_date && o_date
