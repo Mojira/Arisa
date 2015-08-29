@@ -33,6 +33,7 @@ module Arisa
     end
 
     def process(_, issue, reports)
+      return if issue.resolution
       comment_on(issue, reports) if outdated? reports
     end
   end
