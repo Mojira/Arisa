@@ -49,11 +49,11 @@ module Arisa
 
     def process_issues(client)
       issue_pool.query
-      issue_pool.eat(:created).each do |issue|
-        process_created(client, issue)
+      issue_pool.eat(:created).each { |issue| process_created(client, issue) }
+      issue_pool.eat(:updated).each do |issue|
+        process_updated(client, issue)
         process_crash_reports(client, issue)
       end
-      issue_pool.eat(:updated).each { |issue| process_updated(client, issue) }
     end
 
     def process_created(client, issue)

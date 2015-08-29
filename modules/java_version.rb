@@ -27,7 +27,7 @@ module Arisa
       os = report.data.traverse(:system, :operating_system)
       body = response(os).body
       comment = Comment.new(issue, body)
-      return unless comment.exist?
+      return if comment.exist?
       puts "#{issue.key}: Creating comment about outdated Java version"
       comment.save
     end

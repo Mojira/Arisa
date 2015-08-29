@@ -11,8 +11,7 @@ module Arisa
 
     def process(_, issue)
       return unless issue.project.name == 'Trash'
-      return unless issue.status
-      return unless ['Open', 'Reopened'].include? issue.status.name
+      return if issue.resolution
       puts "#{issue.key}: Resolving issue in TRASH"
       issue.transition('Resolve Issue')
     end
