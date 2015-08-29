@@ -26,7 +26,6 @@ module JIRA
       
       def version_name
         create_name
-        @version_name
       end
 
       def <=>(other)
