@@ -57,11 +57,12 @@ module Arisa
     end
 
     def process_created(client, issue)
-      puts "#{issue.key}: Processing new issue"
+      puts "#{issue.key}: Processing created issue"
       issue_modules.each { |target| target.process(client, issue) }
     end
 
     def process_updated(client, issue)
+      puts "#{issue.key}: Processing updated issue"
       updtd_modules.each { |target| target.process(client, issue) }
     end
 

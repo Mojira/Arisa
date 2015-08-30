@@ -15,6 +15,7 @@ module Arisa
 
     def parent?(report, conditions)
       stacktrace = report.stacktrace[:main]
+      return unless stacktrace
       return unless check_description(report, conditions)
       return unless check_version(report, conditions)
       return unless check_header(stacktrace, conditions)

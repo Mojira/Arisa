@@ -23,7 +23,7 @@ module JIRA
         return :release if version_name.release
         return :snapshot if version_name.snapshot
       end
-      
+
       def version_name
         create_name
       end

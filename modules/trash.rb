@@ -1,7 +1,7 @@
 module Arisa
   # Resolves issues in the TRASH project
   class TrashModule
-    def initialize(core, dispatcher)
+    def initialize(_, dispatcher)
       dispatcher.updtd_modules << self
     end
 
