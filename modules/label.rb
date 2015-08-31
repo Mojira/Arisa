@@ -49,7 +49,7 @@ module Arisa
       data = issue_data(issue.labels)
       return unless data
       puts "#{issue.key}: Updating labels"
-      issue.save!(data)
+      issue.save(data)
     end
   end
 end

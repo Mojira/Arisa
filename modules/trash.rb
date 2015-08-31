@@ -13,7 +13,7 @@ module Arisa
       return unless issue.project.name == 'Trash'
       return if issue.resolution
       puts "#{issue.key}: Resolving issue in TRASH"
-      issue.transition('Resolve Issue')
+      issue.transition 'Resolve Issue'
     end
   end
 end

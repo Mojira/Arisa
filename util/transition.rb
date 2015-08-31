@@ -7,7 +7,9 @@ module Arisa
 
     def self.get(client, issue, name)
       match = all(client, issue).find { |transition| transition.name == name }
-      puts "#{issue.key}: Transition '#{name}' is not available" unless match
+      unless match
+        $stderr.puts "#{issue.key}: Transition '#{name}' is not available"
+      end
       match
     end
   end

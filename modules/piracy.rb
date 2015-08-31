@@ -1,6 +1,6 @@
 module Arisa
-  # Remove or replace invalid labels on issues
-  class LabelModule
+  # Resolve issues reported using pirated game launchers
+  class PiracyModule
     def initialize(_, dispatcher)
       dispatcher.issue_modules << self
     end
@@ -10,7 +10,8 @@ module Arisa
     end
 
     def pirated?(issue)
-      environment = issue.environment
+      environment = issue.fields['environment']
+      return false unless environment
       PIRACY_IDENTIFIERS.any? { |identifier| environment.include? identifier }
     end
 
