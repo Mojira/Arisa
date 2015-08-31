@@ -11,6 +11,7 @@ ENABLED_MODULES = [
   Arisa::FixVersionModule,
   Arisa::IncompleteModule,
   Arisa::JavaVersionModule,
+  Arisa::LabelModule,
   Arisa::ModsModule,
   Arisa::TrashModule,
   Arisa::UnreleasedModule,
