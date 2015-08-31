@@ -14,7 +14,7 @@ module Arisa
         update: {
           security: [
             set: {
-              id: security_id
+              id: security_id.to_s
             }
           ]
         }
