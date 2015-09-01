@@ -14,6 +14,7 @@ ENABLED_MODULES = [
   Arisa::LabelModule,
   Arisa::ModsModule,
   Arisa::PiracyModule,
+  Arisa::ReopenAffectedModule,
   Arisa::ReopenUpdatedModule,
   Arisa::SecurityModule,
   Arisa::TrashModule,
