@@ -37,7 +37,13 @@ module Arisa
 
     def handle(e)
       return handle_http_error e if e.is_a? JIRA::HTTPError
-      $stderr.puts e.message, e.backtrace
+      log e
+    end
+
+    def log(e)
+      details = (e.message + "\n" + e.backtrace.join("\n"))
+      File.open('crash.log', 'a') { |f| f.write(details + "\n\n") }
+      Core.log :error, details
     end
 
     def dispatch
