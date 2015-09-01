@@ -13,7 +13,7 @@ module Arisa
     def affected?(issue)
       fix_versions = issue.fields['fixVersions']
       return unless fix_versions
-      version_ids = issue.versions.map { |version| version.id }
+      version_ids = issue.versions.map(&:id)
       fix_version_ids = fix_versions.map { |version| version['id'] }
       !(version_ids & fix_version_ids).empty?
     end
