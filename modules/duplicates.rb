@@ -54,7 +54,7 @@ module Arisa
     end
 
     def resolve(client, issue, parent)
-      puts "#{issue.key}: Resolving duplicate of #{parent}"
+      issue.log :info, "Resolving duplicate of #{parent}"
       client.IssueLink.build.save link_data(issue.key, parent)
       issue.transition 'Resolve Issue', transition_data(issue.key, parent)
     end

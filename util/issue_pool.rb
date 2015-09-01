@@ -27,7 +27,7 @@ module Arisa
       options = { max_results: JQL_RESULTS_MIN }
       issue = client.Issue.jql('ORDER BY created DESC', options).first
       return unless issue
-      puts "Reading issue time from #{issue.key} (ID #{issue.id})"
+      issue.log :verbose, 'Synchronizing issue modification time'
       @created = Time.parse(issue.created)
       @updated = Time.parse(issue.updated)
     end

@@ -25,7 +25,7 @@ module Arisa
       return if issue.fields['security']
       security_id = DEFAULT_SECURITY_LEVELS[issue.project.key]
       return unless security_id
-      puts "#{issue.key}: Adding default security level"
+      issue.log :info, 'Adding default security level'
       issue.save(issue_data(security_id))
     end
   end

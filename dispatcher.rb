@@ -37,7 +37,7 @@ module Arisa
 
     def handle(e)
       return handle_http_error e if e.is_a? JIRA::HTTPError
-      puts e.message, e.backtrace
+      $stderr.puts e.message, e.backtrace
     end
 
     def dispatch
@@ -57,12 +57,12 @@ module Arisa
     end
 
     def process_created(client, issue)
-      puts "#{issue.key}: Processing created issue"
+      issue.log :verbose, 'Processing created issue'
       issue_modules.each { |target| target.process(client, issue) }
     end
 
     def process_updated(client, issue)
-      puts "#{issue.key}: Processing updated issue"
+      issue.log :verbose, 'Processing updated issue'
       updtd_modules.each { |target| target.process(client, issue) }
     end
 
@@ -74,11 +74,11 @@ module Arisa
 
     def handle_http_error(e)
       code = Integer(e.response.code)
-      puts "HTTP Error #{code} (#{e.message})"
-      puts 'Please check your login credentials' if code == 401
-      puts nil, e.backtrace
+      $stderr.puts "HTTP Error #{code} (#{e.message})"
+      $stderr.puts 'Please check your login credentials' if code == 401
+      $stderr.puts nil, e.backtrace
       if [401, 402, 403, 407, 505].include? code
-        puts nil, 'Stopping the bot'
+        $stderr.puts nil, 'Stopping the bot'
         exit false
       end
       check_cooldown(code)

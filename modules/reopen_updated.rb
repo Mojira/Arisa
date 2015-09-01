@@ -24,7 +24,7 @@ module Arisa
     def process(_, issue)
       return unless updated?(issue)
       return unless Guidelines.complete?(issue)
-      puts "#{issue.key}: Reopening updated issue"
+      issue.log :info, 'Reopening updated issue'
       issue.transition 'Reopen Issue'
     end
   end

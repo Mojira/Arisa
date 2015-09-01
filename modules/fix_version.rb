@@ -30,10 +30,10 @@ module Arisa
     end
 
     def process(issue)
-      puts "#{issue.key}: Adding missing fix version"
+      issue.log :info, 'Adding missing fix version'
       data = transition_data(issue.project)
       unless data
-        puts "#{issue.project.key}: Latest version not found"
+        Client.log :error, "#{issue.project.key}: Latest version not found"
         return
       end
       issue.transition('Update Issue', data)

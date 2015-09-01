@@ -28,7 +28,7 @@ module Arisa
       body = response(os).body
       comment = Comment.new(issue, body)
       return if comment.exist?
-      puts "#{issue.key}: Creating comment about outdated Java version"
+      issue.log :info, 'Creating comment about outdated Java version'
       comment.save
     end
 

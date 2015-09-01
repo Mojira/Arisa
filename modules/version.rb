@@ -15,7 +15,7 @@ module Arisa
     end
 
     def resolve(issue)
-      puts "#{issue.key}: Resolving issue with outdated crash reports"
+      issue.log :info, 'Resolving issue with outdated crash reports'
       issue.transition 'Resolve Issue', transition_data
     end
 

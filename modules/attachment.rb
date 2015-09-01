@@ -13,7 +13,7 @@ module Arisa
     def process(_, issue)
       issue.attachments.each do |attachment|
         next if valid?(attachment)
-        puts "#{issue.key}: Deleting invalid attachment #{attachment.filename}"
+        issue.log :info, "Deleting invalid attachment #{attachment.filename}"
         attachment.delete
       end
     end

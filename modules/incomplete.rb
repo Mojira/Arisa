@@ -33,7 +33,7 @@ module Arisa
     def process(_, issue)
       return if issue.resolution
       return if Guidelines.complete?(issue)
-      puts "#{issue.key}: Resolving incomplete issue"
+      issue.log :info, 'Resolving incomplete issue'
       issue.transition 'Resolve Issue', transition_data(issue)
     end
   end

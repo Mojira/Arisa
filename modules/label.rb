@@ -48,7 +48,7 @@ module Arisa
     def process(_, issue)
       data = issue_data(issue.labels)
       return unless data
-      puts "#{issue.key}: Updating labels"
+      issue.log :info, 'Updating labels'
       issue.save(data)
     end
   end

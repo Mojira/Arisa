@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 cd "$(dirname "$0")"
-ruby core.rb
+ruby ./core.rb "$@"

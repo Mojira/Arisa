@@ -12,7 +12,7 @@ module Arisa
     def fetch_field(client)
       match = client.Field.all.find { |field| field.name == 'CHK' }
       unless match
-        puts "CHK field not found, disabling #{self.class.name}"
+        Core.log :error, "CHK field not found, disabling #{self.class.name}"
         return
       end
       @field = match.id
@@ -34,7 +34,7 @@ module Arisa
         }
       }
 
-      puts "#{issue.key}: Setting missing CHK value"
+      issue.log :info, 'Setting missing CHK value'
       issue.transition 'Update Issue', transition_data
     end
   end

@@ -11,9 +11,8 @@ Dir[files].each { |file| require file }
 module Arisa
   # Stores the JIRA client and starts the main loop
   class Core
-    attr_reader :client
-    attr_reader :dispatcher
-    attr_reader :versions
+    attr_reader :client, :dispatcher, :versions
+    @arguments = Arguments.new(ARGV)
 
     def initialize
       @client = JIRA::Client.new(CLIENT_OPTIONS)
@@ -26,6 +25,12 @@ module Arisa
         @dispatcher.dispatch
         sleep @dispatcher.task_delay
       end
+    end
+
+    def self.log(level, text)
+      return unless @arguments.verbose if level == :verbose
+      return unless level == :error if @arguments.quiet
+      (level == :error ? $stderr : $stdout).puts text
     end
   end
 

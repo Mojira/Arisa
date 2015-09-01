@@ -25,7 +25,7 @@ module Arisa
 
     def process(_, issue)
       return unless pirated?(issue)
-      puts "#{issue.key}: Resolving issue with pirated software"
+      issue.log :info, 'Resolving issue with pirated software'
       issue.transition 'Resolve Issue', transition_data
     end
   end

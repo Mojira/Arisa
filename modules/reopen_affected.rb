@@ -21,7 +21,7 @@ module Arisa
     def process(_, issue)
       return unless issue.resolution
       return unless affected?(issue)
-      puts "#{issue.key}: Reopening issue affecting a fix version"
+      issue.log :info, 'Reopening issue affecting a fix version'
       issue.transition 'Reopen Issue'
     end
   end

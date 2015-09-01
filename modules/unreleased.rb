@@ -42,7 +42,7 @@ module Arisa
       @core.versions.refresh(VERSION_CACHE_TTL_ACTIVE)
       data = issue_data(issue)
       return unless data
-      puts "#{issue.key}: Removing unreleased versions"
+      issue.log :info, 'Removing unreleased versions'
       issue.save(data)
     end
   end

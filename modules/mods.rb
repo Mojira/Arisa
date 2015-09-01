@@ -11,7 +11,7 @@ module Arisa
     end
 
     def resolve(issue)
-      puts "#{issue.key}: Resolving issue from modified client"
+      issue.log :info, 'Resolving issue from modified client'
       issue.transition 'Resolve Issue', transition_data
     end
 
