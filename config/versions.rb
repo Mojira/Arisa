@@ -18,7 +18,7 @@ JRE_CACHE_TTL = 60 * 60 * 24 * 7
 
 # Regular expression that extracts the main part of the version
 # from the full version identifier that's used on crash reports
-JRE_VERSION_REGEXP = /([\d\.]+_\d+), ([[[:alnum:]][[:blank]]])/
+JRE_VERSION_REGEXP = /([\d\.]+_\d+), (.+)/
 
 # Vendors that should be ignored when checking for outdated Java
 # versions. You can find the vendor name after the Java version
