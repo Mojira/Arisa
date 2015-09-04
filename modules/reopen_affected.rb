@@ -1,21 +1,26 @@
 module Arisa
   # Reopens issues that are marked as affecting
-  # at least one of their fix versions
+  # a version that's newer than any fix version
   class ReopenAffectedModule
     def initialize(_, dispatcher)
       dispatcher.updtd_modules << self
     end
 
     def fields
-      [:resolution, 'fixVersions', :versions]
+      [:resolution, :fixVersions, :versions]
     end
 
     def affected?(issue)
-      fix_versions = issue.fields['fixVersions']
-      return unless fix_versions
-      version_ids = issue.versions.reject(&:archived).map(&:id)
-      fix_version_ids = fix_versions.map { |version| version['id'] }
-      !(version_ids & fix_version_ids).empty?
+      return unless issue.fields['fixVersions']
+      fix_versions = issue.fixVersions.reject(&:archived)
+      issue.versions.reject(&:archived).each do |version|
+        fix_versions.each do |fix_version|
+          diff = version <=> fix_version
+          next unless diff
+          return true unless diff < 0
+        end
+      end
+      false
     end
 
     def process(_, issue)
