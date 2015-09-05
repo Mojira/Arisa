@@ -23,6 +23,7 @@ module Arisa
     end
 
     def release
+      return if snapshot
       name.match Gem::Version::VERSION_PATTERN
     end
 
