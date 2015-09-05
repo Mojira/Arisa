@@ -6,7 +6,7 @@ module Arisa
     end
 
     def fields
-      [:environment]
+      [:environment, :resolution]
     end
 
     def pirated?(issue)
@@ -24,6 +24,7 @@ module Arisa
     end
 
     def process(_, issue)
+      return if issue.resolution
       return unless pirated?(issue)
       issue.log :info, 'Resolving issue with pirated software'
       issue.transition 'Resolve Issue', transition_data
