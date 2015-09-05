@@ -5,19 +5,26 @@ Dir[files].each { |file| require file }
 
 # List of modules that will be loaded when the bot starts
 ENABLED_MODULES = [
-  Arisa::AttachmentModule,
+  # Query modules
   Arisa::CHKModule,
-  Arisa::DuplicatesModule,
   Arisa::FixVersionModule,
-  Arisa::IncompleteModule,
-  Arisa::JavaVersionModule,
-  Arisa::LabelModule,
-  Arisa::ModsModule,
+  
+  # Issue modules
   Arisa::PiracyModule,
+  
+  # Update modules
+  Arisa::AttachmentModule,
+  Arisa::IncompleteModule,
+  Arisa::UnreleasedModule,
+  Arisa::LabelModule,
   Arisa::ReopenAffectedModule,
   Arisa::ReopenUpdatedModule,
   Arisa::SecurityModule,
   Arisa::TrashModule,
-  Arisa::UnreleasedModule,
-  Arisa::VersionModule
+  
+  # Crash modules
+  Arisa::JavaVersionModule,
+  Arisa::DuplicatesModule,
+  Arisa::ModsModule,
+  Arisa::VersionModule,
 ]

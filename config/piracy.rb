@@ -3,6 +3,7 @@
 # The filter is based on an analysis of pirated builds published in STAFF-111.
 # These strings are checked against the environment field.
 PIRACY_IDENTIFIERS = [
+  'Minecraft Launcher null',
   'Bootstrap 0',
   'Launcher: 1.0.10  (bootstrap 4)',
   'Launcher: 1.0.10  (bootstrap 5)',
