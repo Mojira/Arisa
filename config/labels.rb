@@ -17,6 +17,12 @@ LABEL_BLACKLIST = %w(
   yours yourself yourselves
 )
 
+# A list of labels that will be substituted with other labels.
+LABEL_ALIASES = {
+  # TODO: Add more useful labels here
+  'myzel' => 'mycelium',
+}
+
 # A list of regular expressions that match labels which should be removed.
 # As always in Ruby, \A matches the start of a string, \z matches the end.
 # NOTE: Regular expressions without \A and \z match anywhere in the label.

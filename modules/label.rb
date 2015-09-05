@@ -14,6 +14,7 @@ module Arisa
       # instead of underscores in a poll on May 3, 2015.
       label = str.gsub('_', '-')
       label.downcase! if label.include?('-') || label == label.capitalize
+      label = LABEL_ALIASES[label] if LABEL_ALIASES[label]
       label
     end
 
