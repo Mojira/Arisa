@@ -20,7 +20,7 @@ LABEL_BLACKLIST = %w(
 # A list of labels that will be substituted with other labels.
 LABEL_ALIASES = {
   # TODO: Add more useful labels here
-  'myzel' => 'mycelium',
+  'myzel' => 'mycelium'
 }
 
 # A list of regular expressions that match labels which should be removed.

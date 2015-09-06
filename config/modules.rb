@@ -8,10 +8,10 @@ ENABLED_MODULES = [
   # Query modules
   Arisa::CHKModule,
   Arisa::FixVersionModule,
-  
+
   # Issue modules
   Arisa::PiracyModule,
-  
+
   # Update modules
   Arisa::AttachmentModule,
   Arisa::IncompleteModule,
@@ -21,10 +21,10 @@ ENABLED_MODULES = [
   Arisa::ReopenUpdatedModule,
   Arisa::SecurityModule,
   Arisa::TrashModule,
-  
+
   # Crash modules
   Arisa::JavaVersionModule,
   Arisa::DuplicatesModule,
   Arisa::ModsModule,
-  Arisa::VersionModule,
+  Arisa::VersionModule
 ]

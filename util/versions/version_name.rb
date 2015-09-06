@@ -24,7 +24,8 @@ module Arisa
 
     def release
       return if snapshot
-      name.match Gem::Version::VERSION_PATTERN
+      match = (name.match Gem::Version::VERSION_PATTERN)[0]
+      match if match && match.include?('.')
     end
 
     def snapshot
