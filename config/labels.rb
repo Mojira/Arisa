@@ -44,7 +44,6 @@ LABEL_BLACKLIST_REGEXP = [
   /stupid/i,
   /survival/i,
   /xperia/i,
-  /\Anew/i,
-  /\Anot/i,
-  /\Apocket/i
+  /\Anew-/i,
+  /\Anot-/i
 ]
