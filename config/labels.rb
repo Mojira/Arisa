@@ -42,6 +42,7 @@ KNOWN_LABELS = %w(
 
 # A list of labels that will be substituted with other labels.
 LABEL_ALIASES = {
+<<<<<<< HEAD
     'render' => 'rendering',
     'items' => 'item',
     'mobs' => 'mob',
@@ -50,6 +51,16 @@ LABEL_ALIASES = {
     'animals' => 'animal',
     'tabulator' => 'tab',
     'texturepack' => 'resource-pack'
+=======
+  'render'      => 'rendering',
+  'items'       => 'item',
+  'mobs'        => 'mob',
+  'blocks'      => 'block',
+  'particles'   => 'particle',
+  'animals'     => 'animal',
+  'tabulator'   => 'tab',
+  'texturepack' => 'resource-pack'
+>>>>>>> 8007155dddce2e3a7aedd323eb903fd216d96d4c
 }
 
 # A list of regular expressions that match labels which should be removed.
