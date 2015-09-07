@@ -42,13 +42,13 @@ KNOWN_LABELS = %w(
 
 # A list of labels that will be substituted with other labels.
 LABEL_ALIASES = {
-  'render' => 'rendering',
-  'items' => 'item',
-  'mobs' => 'mob',
-  'blocks' => 'block',
-  'particles' => 'particle',
-  'animals' => 'animal',
-  'tabulator' => 'tab',
+  'render'      => 'rendering',
+  'items'       => 'item',
+  'mobs'        => 'mob',
+  'blocks'      => 'block',
+  'particles'   => 'particle',
+  'animals'     => 'animal',
+  'tabulator'   => 'tab',
   'texturepack' => 'resource-pack'
 }
 
