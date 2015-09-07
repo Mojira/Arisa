@@ -1,0 +1,14 @@
+# RubyCop configuration file for Arisa
+
+# Exclude the old, not (yet?) rewritten modules
+AllCops:
+  Exclude:
+    - 'oldmodules/*.rb'
+
+# Offense count: 2
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# NOTE: This is used for creating fake-classes using methods.
+#       It's not awesome but jira-ruby does it too, and I think
+#       consistency is more important than awesomeness. :)
+Style/MethodName:
+  Enabled: false

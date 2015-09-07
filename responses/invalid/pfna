@@ -1,0 +1,7 @@
+Duplicate of MC-297 -- Please update your graphics card drivers following these instructions: [Updating Graphics Card Drivers|https://help.mojang.com/customer/portal/articles/928493-error-bad-video-card-driver].
+* If you are using Java arguments to increase the amount of memory, please reduce it to the default 512MB.
+* Do *not* rely on automatic searches for driver updates.
+* Do *not* use Windows Update or Device Manager - Microsoft doesn't install OpenGL, they promote DirectX.
+* If you know the brand and type of your graphics card, go to the links provided above and search manually for the most recent driver for your card. The automatic detection tools of the card manufacturers are not recommended.
+
+If all that won't help, please use the [Mojang Support Center|http://help.mojang.com/customer/portal/articles/364794-where-can-i-find-more-help-and-technical-support-].
