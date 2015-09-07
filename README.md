@@ -1,5 +1,5 @@
 # Arisa
-Moderation Bot for Mojang's bug tracker
+The awesome Ruby bug tracker moderator
 
 ## Installation
 

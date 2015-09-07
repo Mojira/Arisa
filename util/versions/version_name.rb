@@ -24,6 +24,7 @@ module Arisa
 
     def release
       return if snapshot
+      return unless name.scan(/[[[:digit:]]\.]+/).length == 1
       match = (name.match Gem::Version::VERSION_PATTERN)[0]
       match if match && match.include?('.')
     end

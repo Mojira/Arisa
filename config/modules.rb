@@ -14,13 +14,13 @@ ENABLED_MODULES = [
 
   # Update modules
   Arisa::AttachmentModule,
+  Arisa::TrashModule,
   Arisa::IncompleteModule,
   Arisa::UnreleasedModule,
   Arisa::LabelModule,
   Arisa::ReopenAffectedModule,
   Arisa::ReopenUpdatedModule,
   Arisa::SecurityModule,
-  Arisa::TrashModule,
 
   # Crash modules
   Arisa::JavaVersionModule,

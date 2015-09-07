@@ -39,6 +39,7 @@ module Arisa
     end
 
     def reports_comment(comment)
+      return unless comment.author && issue.reporter
       return unless comment.author['name'] == issue.reporter.name
       CrashReport.parse(comment.body)
     end

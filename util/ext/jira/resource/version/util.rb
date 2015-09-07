@@ -31,8 +31,18 @@ module JIRA
       def <=>(other)
         s_date = attrs['releaseDate']
         o_date = other.attrs['releaseDate']
-        return version_name <=> other.version_name unless s_date && o_date
-        Date.parse(s_date) <=> Date.parse(o_date)
+        diff = compare_unique_dates(s_date, o_date)
+        return diff if diff
+        version_name <=> other.version_name
+      end
+
+      def compare_unique_dates(s_date, o_date)
+        return unless s_date && o_date
+        diff = Date.parse(s_date) <=> Date.parse(o_date)
+        # Multiple versions released on the
+        # same date aren't always identical.
+        # We'll compare the names instead.
+        diff unless diff == 0
       end
     end
   end
