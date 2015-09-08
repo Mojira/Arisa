@@ -18,8 +18,8 @@ PASSWORD = ENV['ARISA_AUTH_PASSWORD']
 
 CLIENT_OPTIONS = {
     auth_type:      :basic,
-    username:	    USERNAME,
-    password:	    PASSWORD,
-    site:		    SITE,
+    username:       USERNAME,
+    password:       PASSWORD,
+    site:           SITE,
     context_path:   CONTEXT_PATH
 }
