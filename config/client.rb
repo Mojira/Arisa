@@ -15,10 +15,11 @@ USERNAME = ENV['ARISA_AUTH_USERNAME']
 PASSWORD = ENV['ARISA_AUTH_PASSWORD']
 
 # Option hash for the JIRA API client
+
 CLIENT_OPTIONS = {
-    auth_type:   :basic,
-    username:	 USERNAME,
-    password:	 PASSWORD,
-    site:		 SITE,
-    context_path:CONTEXT_PATH
+    auth_type:      :basic,
+    username:	    USERNAME,
+    password:	    PASSWORD,
+    site:		    SITE,
+    context_path:   CONTEXT_PATH
 }
