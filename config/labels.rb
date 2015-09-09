@@ -34,7 +34,7 @@ KNOWN_LABELS = %w(
   armor-stand splash-potion pressure-plate weighted-pressure-plate
   command-block-output command-block-minecart log-in log-out
   south-east-rule dragon-egg illegal-argument-exception item-frame
-  concurrent-modification-exception chicken-jockey full-screen
+  concurrent-modification-exception chicken-jockey fullscreen
   potion-effect world-generation resource-pack
 
   /give /summon /tp /setworldspawn /replaceitem /msg
