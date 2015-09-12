@@ -3,7 +3,7 @@ module Arisa
   class VersionModule
     def initialize(core, dispatcher)
       @core = core
-      dispatcher.crash_modules << self
+      dispatcher.created_crash_modules << self
     end
 
     def outdated?(issue, reports)
