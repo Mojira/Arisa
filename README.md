@@ -1,4 +1,8 @@
-# Arisa
+# This repository is no longer maintained.
+
+Arisa was rewritten in NodeJS a while ago and thus, this repository is no longer being maintained. Check out the new repository for Arisa [here](https://github.com/mojira/arisa-js), this one will remain on GitHub in read-only state.
+
+## Arisa
 The awesome Ruby bug tracker moderator
 
 ## Installation
